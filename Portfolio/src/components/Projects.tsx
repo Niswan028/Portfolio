@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Brain, Sparkles, Palette, Code, ExternalLink } from 'lucide-react';
+import { Sparkles, Palette, Code } from 'lucide-react';
 
 const Projects: React.FC = () => {
   const ref = useRef(null);
@@ -24,63 +24,17 @@ const Projects: React.FC = () => {
             Digital Creations
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Two masterpieces that showcase the intersection of art and technology
+            A masterpiece that showcases the intersection of art and technology
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* AI Chatbot Project */}
+        {/* Centered Portfolio Project */}
+        <div className="flex justify-center">
           <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative"
-          >
-            <div className="hologram p-8 rounded-2xl backdrop-blur-md border border-blue-500/30 h-full">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-3 bg-blue-500/20 rounded-full">
-                  <Brain className="w-8 h-8 text-blue-400" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white">Neural Companion</h3>
-                  <p className="text-blue-300">AI Fitness Chatbot</p>
-                </div>
-              </div>
-
-              {/* Chat Preview Screenshot */}
-              <div className="bg-black/50 rounded-lg p-4 mb-6 border border-green-500/20 text-gray-300">
-                <p className="text-sm">An AI-powered chatbot built to guide users through personalized fitness recommendations and advice. Explore it live:</p>
-                <a
-                  href="https://fitaichat.netlify.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 inline-flex items-center text-green-400 hover:underline"
-                >
-                  Visit Chatbot <ExternalLink className="ml-1 w-4 h-4" />
-                </a>
-              </div>
-
-              <div className="flex flex-wrap gap-2 mb-4">
-                {['React', 'Tailwind CSS', 'Framer Motion', 'ML Model', 'Netlify'].map((tech) => (
-                  <span key={tech} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-500/30">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              <p className="text-gray-300 leading-relaxed">
-                Developed a fitness assistant chatbot that provides exercise tips, workout plans, and nutritional guidance. 
-                The interface is sleek and interactive, demonstrating frontend skills and AI integration.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Portfolio Project */}
-          <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="relative"
+            className="w-full max-w-2xl"
           >
             <div className="hologram p-8 rounded-2xl backdrop-blur-md border border-purple-500/30 h-full">
               <div className="flex items-center gap-4 mb-6">
@@ -126,10 +80,9 @@ const Projects: React.FC = () => {
                     </span>
                   ))}
                 </div>
-               <p className="text-gray-300 leading-relaxed">
-  This portfolio is designed in a unique and creative way to stand out. It includes smooth animations and interactive elements that make browsing the site more engaging and enjoyable.
-</p>
-
+                <p className="text-gray-300 leading-relaxed">
+                  This portfolio is designed in a unique and creative way to stand out. It includes smooth animations and interactive elements that make browsing the site more engaging and enjoyable.
+                </p>
 
                 <div className="flex items-center gap-2 text-yellow-400">
                   <Sparkles className="w-5 h-5" />
